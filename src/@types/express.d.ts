@@ -1,10 +1,10 @@
-import { User } from "../entities";
+import { Contact, User } from "../entities";
 
 declare global {
   namespace Express {
     interface Request {
-      validated: User;
-      decoded: Partial<User>;
+      validated: User | Contact;
+      contact: Contact;
       user: User;
     }
   }

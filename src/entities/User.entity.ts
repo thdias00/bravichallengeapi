@@ -12,6 +12,6 @@ export class User {
     @Column()
     function: string;
   
-    @OneToMany(() => Contact, (contact) => contact.owner, { eager: true })
+    @OneToMany(() => Contact, (contact) => contact.owner)
     contacts: Contact[];
   }

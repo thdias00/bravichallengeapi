@@ -21,6 +21,11 @@ class UserController {
     const user = await userService.update(req);
     return res.status(200).json(user);
   };
+
+  delete = async (req: Request, res: Response) =>{
+    await userService.delete(req);
+    return res.status(202).json({message: "User successfully deleted"})
+  }
 }
 
 export default new UserController();

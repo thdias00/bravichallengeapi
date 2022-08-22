@@ -15,7 +15,7 @@ services:
       - pg
     command: bash -c 'yarn migration:run && yarn dev'
   pg:
-    container_name: braviChallengeDb
+    container_name: bravichallengedb
     image: postgres
     env_file:
       - .env

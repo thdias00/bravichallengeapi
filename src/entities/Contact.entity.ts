@@ -12,6 +12,6 @@ export class Contact {
     @Column()
     type: string;
   
-    @ManyToOne(() => User, (user) => user.contacts)
+    @ManyToOne(() => User, (user) => user.contacts, { eager: true })
     owner: User;
   }

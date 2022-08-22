@@ -1,4 +1,4 @@
-import { Repository, UpdateResult } from "typeorm";
+import { DeleteResult, Repository, UpdateResult } from "typeorm";
 import { AppDataSource } from "../data-source";
 import { User } from "../entities";
 
@@ -7,6 +7,7 @@ interface IUserRepo {
     listAll: () => Promise<User[]>;
     retrieve: (payload: object) => Promise<User>;
     update: (id: string, payload: Partial<User>) => Promise<UpdateResult>;
+    delete: (id: string) => Promise<DeleteResult>;
 }
 
 class UserRepository implements IUserRepo {
@@ -22,7 +23,9 @@ class UserRepository implements IUserRepo {
 
     retrieve = async (payload: object) => await this.userRepo.findOneBy({...payload});
 
-    update = async (id: string, payload: Partial<User>) => await this.userRepo.update(id, {...payload})
+    update = async (id: string, payload: Partial<User>) => await this.userRepo.update(id, {...payload});
+
+    delete = async (id: string): Promise<DeleteResult> => await this.userRepo.delete(id);
 }
 
 export default new UserRepository();

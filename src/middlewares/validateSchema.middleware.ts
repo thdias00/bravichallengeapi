@@ -1,6 +1,5 @@
 import { NextFunction, Request, Response } from "express";
 import { AnySchema } from "yup";
-import { ErrorHandler } from "../errors/errors";
 
 const validateSchema =
   (shape: AnySchema) =>
@@ -12,6 +11,7 @@ const validateSchema =
       });
 
       req.validated = validated;
+      req.contact = req.body.contact;
 
       return next();
     } catch (error) {

@@ -33,4 +33,10 @@ userRouter.patch(
   userController.update
 );
 
+userRouter.delete(
+  "/users/:id",
+  getUserByIdOr404,
+  userController.delete
+)
+
 export default userRouter;
