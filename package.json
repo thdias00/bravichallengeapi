@@ -6,7 +6,7 @@
   "author": "Thiago <thiago.dias.148116@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": "16.3.2"
+    "node": "16"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
