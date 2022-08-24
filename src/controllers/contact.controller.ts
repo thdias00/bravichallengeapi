@@ -3,8 +3,8 @@ import contactService from "../services/contact.service";
 
 class ContactController {
     createContact = async(req: Request, res: Response) => {
-        //await contactService.create(req.body);
-        console.log("ok")
+        await contactService.create(req.body);
+        
         return res.status(201).json({message: "Contact successfully created"});
     }
 
