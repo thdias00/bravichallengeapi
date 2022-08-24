@@ -1,5 +1,11 @@
 # **Challenge Bravi Api**
 
+**Unfortunately I could not get the api up for production, so it is necessary to clone the repository in order to test it, using docker compose**
+
+```
+sudo docker-compose up --build
+```
+
 ## Rotas
 
 </br>
